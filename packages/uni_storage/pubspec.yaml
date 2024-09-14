@@ -1,0 +1,13 @@
+name: uni_storage
+description: "A unified storage client."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  uni_storage_base: ^0.0.1
+
+dev_dependencies:
+  mostly_reasonable_lints: ^0.1.2

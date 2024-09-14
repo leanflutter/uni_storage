@@ -1,0 +1,8 @@
+# IntelliJ related
+*.iml
+.idea/
+
+# Flutter/Dart/Pub related
+/pubspec.lock
+.dart_tool/
+**/pubspec_overrides.yaml
