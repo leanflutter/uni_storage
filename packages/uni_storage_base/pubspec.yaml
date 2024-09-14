@@ -7,4 +7,7 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dev_dependencies:
+  html: ^0.15.4
+  http: ^1.1.0
   mostly_reasonable_lints: ^0.1.2
+  recase: ^4.1.0
