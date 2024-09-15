@@ -1,0 +1,22 @@
+name: s3_api_base
+description: ""
+version: 0.0.1
+homepage: https://github.com/leanflutter/uni_storage
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  buffer: ^1.2.3
+  convert: ^3.1.1
+  crypto: ^3.0.3
+  http: ^1.1.0
+  intl: ^0.19.0
+  meta: ^1.12.0
+  mime: ^1.0.4
+  path: ^1.8.0
+  xml: ^6.4.2
+
+dev_dependencies:
+  html: ^0.15.4
+  mostly_reasonable_lints: ^0.1.2
