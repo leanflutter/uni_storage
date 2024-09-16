@@ -29,7 +29,7 @@ class GetObjectAttributesParts {
 
   /// A container for elements related to a particular part. A response can
   /// contain zero or more Parts elements.
-  final ObjectPart? parts;
+  final List<ObjectPart>? parts;
 
   /// The total number of parts.
   final int? totalPartsCount;

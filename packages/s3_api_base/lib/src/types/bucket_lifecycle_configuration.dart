@@ -9,5 +9,5 @@ class BucketLifecycleConfiguration {
   });
 
   /// A lifecycle rule for individual objects in an Amazon S3 bucket.
-  final LifecycleRule rules;
+  final List<LifecycleRule> rules;
 }

@@ -18,7 +18,7 @@ class IntelligentTieringConfiguration {
 
   /// Specifies the S3 Intelligent-Tiering storage class tier of the
   /// configuration.
-  final Tiering tierings;
+  final List<Tiering> tierings;
 
   /// Specifies a bucket filter. The configuration only includes objects that
   /// meet the filter's criteria.

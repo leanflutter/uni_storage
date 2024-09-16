@@ -24,7 +24,7 @@ class S3Location {
   final String prefix;
 
   /// A list of grants that control access to the staged results.
-  final Grant? accessControlList;
+  final List<Grant>? accessControlList;
 
   /// The canned ACL to apply to the restore results.
   final String? cannedACL;
@@ -39,5 +39,5 @@ class S3Location {
   final Tagging? tagging;
 
   /// A list of metadata to store with the restore results in S3.
-  final MetadataEntry? userMetadata;
+  final List<MetadataEntry>? userMetadata;
 }

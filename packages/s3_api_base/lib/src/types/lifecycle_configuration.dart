@@ -7,5 +7,5 @@ class LifecycleConfiguration {
   });
 
   /// Specifies lifecycle configuration rules for an Amazon S3 bucket.
-  final Rule rules;
+  final List<Rule> rules;
 }

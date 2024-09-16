@@ -14,5 +14,5 @@ class ReplicationRuleAndOperator {
   final String? prefix;
 
   /// An array of tags containing key and value pairs.
-  final Tag? tags;
+  final List<Tag>? tags;
 }

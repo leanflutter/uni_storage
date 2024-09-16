@@ -18,6 +18,7 @@ dependencies:
   xml: ^6.4.2
 
 dev_dependencies:
+  collection: ^1.19.0
   html: ^0.15.4
   mostly_reasonable_lints: ^0.1.2
   recase: any

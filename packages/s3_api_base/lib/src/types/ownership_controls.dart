@@ -7,5 +7,5 @@ class OwnershipControls {
   });
 
   /// The container element for an ownership control rule.
-  final OwnershipControlsRule rules;
+  final List<OwnershipControlsRule> rules;
 }

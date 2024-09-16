@@ -18,13 +18,13 @@ class NotificationConfiguration {
 
   /// Describes the AWS Lambda functions to invoke and the events for which to
   /// invoke them.
-  final LambdaFunctionConfiguration? lambdaFunctionConfigurations;
+  final List<LambdaFunctionConfiguration>? lambdaFunctionConfigurations;
 
   /// The Amazon Simple Queue Service queues to publish messages to and the
   /// events for which to publish messages.
-  final QueueConfiguration? queueConfigurations;
+  final List<QueueConfiguration>? queueConfigurations;
 
   /// The topic to which notifications are sent and the events for which
   /// notifications are generated.
-  final TopicConfiguration? topicConfigurations;
+  final List<TopicConfiguration>? topicConfigurations;
 }

@@ -7,5 +7,5 @@ class Tagging {
   });
 
   /// A collection for a set of tags
-  final Tag tagSet;
+  final List<Tag> tagSet;
 }

@@ -8,5 +8,5 @@ class S3KeyFilter {
 
   /// A list of containers for the key-value pair that defines the criteria for
   /// the filter rule.
-  final FilterRule? filterRules;
+  final List<FilterRule>? filterRules;
 }

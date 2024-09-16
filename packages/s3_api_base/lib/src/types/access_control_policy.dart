@@ -10,7 +10,7 @@ class AccessControlPolicy {
   });
 
   /// A list of grants.
-  final Grant? grants;
+  final List<Grant>? grants;
 
   /// Container for the bucket owner's display name and ID.
   final Owner? owner;

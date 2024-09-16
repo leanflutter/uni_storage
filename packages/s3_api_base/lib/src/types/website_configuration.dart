@@ -22,5 +22,5 @@ class WebsiteConfiguration {
   final RedirectAllRequestsTo? redirectAllRequestsTo;
 
   /// Rules that define when a redirect is applied and the redirect behavior.
-  final RoutingRule? routingRules;
+  final List<RoutingRule>? routingRules;
 }

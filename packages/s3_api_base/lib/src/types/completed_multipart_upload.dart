@@ -7,5 +7,5 @@ class CompletedMultipartUpload {
   });
 
   /// Array of CompletedPart data types.
-  final CompletedPart? parts;
+  final List<CompletedPart>? parts;
 }

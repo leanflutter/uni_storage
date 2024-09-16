@@ -8,5 +8,5 @@ class ServerSideEncryptionConfiguration {
 
   /// Container for information about a particular server-side encryption
   /// configuration rule.
-  final ServerSideEncryptionRule rules;
+  final List<ServerSideEncryptionRule> rules;
 }

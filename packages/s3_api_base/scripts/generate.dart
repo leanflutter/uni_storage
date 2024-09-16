@@ -2,10 +2,13 @@
 
 import 'dart:io';
 
-import 'package:html/dom.dart' show Element;
 import 'package:html/parser.dart' show parse;
 import 'package:http/http.dart' as http;
 import 'package:recase/recase.dart';
+
+import 's3_operation.dart';
+import 's3_type.dart';
+import 's3_variable.dart';
 
 const _kDartTypes = {
   'Integer': 'int',
@@ -49,34 +52,7 @@ String _toDartFileName(String name) {
       .replaceAll('j_s_o_n', 'json');
 }
 
-class S3Type {
-  S3Type({
-    required this.name,
-    required this.description,
-    required this.fields,
-  });
-
-  factory S3Type.fromHtmlElement(Element element) {
-    final name = element.querySelector('h1')!.text;
-    final description = element
-        .querySelector('#main-col-body p')!
-        .text
-        .replaceAll(RegExp(r'\s+'), ' ');
-    final fields = <S3TypeField>[];
-    for (var dt in element.querySelectorAll('dt')) {
-      fields.add(S3TypeField.fromHtmlElement(dt));
-    }
-    return S3Type(
-      name: name,
-      description: description,
-      fields: fields,
-    );
-  }
-
-  final String name;
-  final String description;
-  final List<S3TypeField> fields;
-
+extension on S3Type {
   String get dartName => name;
 
   List<String> get dartImportTypes {
@@ -86,7 +62,7 @@ class S3Type {
               e.dartType != 'dynamic' &&
               e.dartType != 'List<String>';
         })
-        .map((e) => e.dartType)
+        .map((e) => e.dartType.replaceAll('List<', '').replaceAll('>', ''))
         .toList()
       ..sort((a, b) => a.compareTo(b));
   }
@@ -133,48 +109,21 @@ class S3Type {
   }
 }
 
-class S3TypeField {
-  const S3TypeField({
-    required this.name,
-    required this.description,
-    required this.type,
-    required this.required,
-  });
-
-  factory S3TypeField.fromHtmlElement(Element element) {
-    final dd = element.nextElementSibling!;
-    final name = element.text.trim();
-    final description =
-        dd.querySelector('p')!.text.replaceAll(RegExp(r'\s+'), ' ');
-    final type = dd
-        .querySelectorAll('p')
-        .firstWhere((e) => e.text.contains('Type:'))
-        .text;
-    final isRequired = dd.text.contains('Required: Yes');
-    return S3TypeField(
-      name: name,
-      description: description,
-      type: type,
-      required: isRequired,
-    );
-  }
-
-  final String name;
-  final String description;
-  final String type;
-  final bool required;
-
+extension on S3Variable {
   /// Gets the Dart name of this field.
   String get dartName => name.camelCase;
 
   /// Gets the Dart type of this field.
   String get dartType {
-    if (this.type.contains('Type: Base64-encoded binary data object')) {
+    if (this.type == null) {
+      return 'dynamic';
+    }
+    if (this.type!.contains('Type: Base64-encoded binary data object')) {
       return 'String';
     }
 
     final match =
-        RegExp(r'Type: (Array of |)(\w+)( data type|)').firstMatch(this.type)!;
+        RegExp(r'Type: (Array of |)(\w+)( data type|)').firstMatch(this.type!)!;
     final type = match.group(2);
     final isArray = match.group(1)!.trim().isNotEmpty;
     final isObject = match.group(3)!.trim().isNotEmpty;
@@ -182,9 +131,92 @@ class S3TypeField {
     String resolvedDartType = _kDartTypes[type] ?? type ?? 'dynamic';
     if (isArray) {
       resolvedDartType = 'List<$resolvedDartType>';
+    } else if (isObject) {
+      resolvedDartType = type ?? 'dynamic';
     }
-    if (isObject) resolvedDartType = type ?? 'dynamic';
     return resolvedDartType;
+  }
+}
+
+extension on S3Operation {
+  String toDartClass() {
+    final buffer = StringBuffer();
+    if (responseElements.isNotEmpty) {
+      final S3Variable rootTag = responseElements.first;
+      final fields = responseElements
+          .where((e) => !e.description.contains('Root level tag'))
+          .toList();
+
+      List<String> dartImportTypes = fields
+          .where((e) {
+            return !_kDartTypes.values.contains(e.dartType) &&
+                e.dartType != 'dynamic' &&
+                e.dartType != 'List<String>';
+          })
+          .map((e) => e.dartType.replaceAll('List<', '').replaceAll('>', ''))
+          .toList()
+        ..sort((a, b) => a.compareTo(b));
+      if (dartImportTypes.isNotEmpty) {
+        for (final importType in dartImportTypes) {
+          buffer.writeln(
+            'import \'package:s3_api_base/src/types/${_toDartFileName(importType)}.dart\';',
+          );
+        }
+        buffer.writeln();
+      }
+      // Add a doc comment.
+      if (rootTag.description.isNotEmpty) {
+        buffer.writeln(_toDartDocComment(rootTag.description));
+      }
+      // Add the class definition.
+      buffer.writeln('class ${rootTag.name.pascalCase} {');
+      if (fields.isNotEmpty) {
+        // Add a constructor.
+        buffer.writeln('  ${rootTag.name.pascalCase}({');
+        for (final field in fields) {
+          final requiredStr = field.required ? 'required ' : '';
+          buffer.writeln('    ${requiredStr}this.${field.dartName},');
+        }
+        buffer.writeln('  });');
+        // Add fields.
+        for (final field in fields) {
+          buffer.writeln();
+          if (field.description.isNotEmpty) {
+            buffer.writeln(_toDartDocComment(field.description, indent: 2));
+          }
+          final nullable = field.required ? '' : '?';
+          buffer
+              .writeln('  final ${field.dartType}$nullable ${field.dartName};');
+        }
+      }
+      buffer.writeln('}');
+      buffer.writeln();
+    }
+
+    // Add a doc comment.
+    if (description.isNotEmpty) {
+      buffer.writeln(_toDartDocComment(description));
+    }
+    buffer.writeln('abstract mixin class ${name}Operation {');
+    if (uriRequestParameters.isNotEmpty) {
+      buffer.writeln('  Future<dynamic> ${name.camelCase}({');
+      int i = 0;
+      for (var param in uriRequestParameters) {
+        String type = param.dartType == 'dynamic' ? 'String' : param.dartType;
+        String name = param.name.replaceAll('x-amz-', '').camelCase;
+        String nullable = param.required ? '' : '?';
+        if (i++ != 0) {
+          buffer.writeln();
+        }
+        buffer.writeln(_toDartDocComment(param.description, indent: 4));
+        buffer.writeln('    $type$nullable $name,');
+      }
+      buffer.writeln('  });');
+    } else {
+      buffer.writeln('  Future<dynamic> ${name.camelCase}();');
+    }
+    buffer.writeln('}');
+    return buffer.toString();
   }
 }
 
@@ -241,7 +273,41 @@ Future<void> _genS3ApiTypes() async {
   File('lib/s3_types.dart').writeAsString(buffer.toString());
 }
 
-Future<void> _genApiOperations() async {}
+/// Returns a list of URLs to the API operations.
+Future<List<String>> _getApiOperationsUrls() async {
+  const baseUrl = 'https://docs.aws.amazon.com/AmazonS3/latest/API';
+  const url = '$baseUrl/API_Operations_Amazon_Simple_Storage_Service.html';
+  final html = await _getHtml(url);
+  final document = parse(html);
+  final urls = document.querySelectorAll('.listitem a');
+  return urls
+      .map<String>((a) => a.attributes['href']!.substring(2))
+      .map((a) => '$baseUrl/$a')
+      .toList();
+}
+
+Future<void> _genApiOperations() async {
+  final urls = await _getApiOperationsUrls();
+
+  List<String> imports = [];
+  List<String> withs = [];
+  for (final url in urls) {
+    print('Parsing $url');
+    final String html = await _getHtml(url);
+    final s3Operation = S3Operation.fromHtmlElement(parse(html).body!);
+    final file =
+        File('lib/src/operations/${_toDartFileName(s3Operation.name)}.dart');
+    await file.writeAsString(s3Operation.toDartClass());
+    imports.add(
+      'import \'package:s3_api_base/src/operations/${_toDartFileName(s3Operation.name)}.dart\';',
+    );
+    withs.add('${s3Operation.name}Operation');
+  }
+  imports.sort((a, b) => a.compareTo(b));
+  withs.sort((a, b) => a.compareTo(b));
+  print(imports.join('\n'));
+  print(withs.join(',\n'));
+}
 
 Future<void> main() async {
   await _genS3ApiTypes();

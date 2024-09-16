@@ -14,5 +14,5 @@ class IntelligentTieringAndOperator {
 
   /// All of these tags must exist in the object's tag set in order for the
   /// configuration to apply.
-  final Tag? tags;
+  final List<Tag>? tags;
 }

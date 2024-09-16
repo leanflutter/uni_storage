@@ -54,12 +54,12 @@ class LifecycleRule {
   /// is versioning-enabled (or versioning is suspended), you can set this
   /// action to request that Amazon S3 transition noncurrent object versions to
   /// a specific storage class at a set period in the object's lifetime.
-  final NoncurrentVersionTransition? noncurrentVersionTransitions;
+  final List<NoncurrentVersionTransition>? noncurrentVersionTransitions;
 
   ///  This member has been deprecated.
   final String? prefix;
 
   /// Specifies when an Amazon S3 object transitions to a specified storage
   /// class.
-  final Transition? transitions;
+  final List<Transition>? transitions;
 }

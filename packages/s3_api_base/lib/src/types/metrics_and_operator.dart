@@ -17,5 +17,5 @@ class MetricsAndOperator {
   final String? prefix;
 
   /// The list of tags used when evaluating an AND predicate.
-  final Tag? tags;
+  final List<Tag>? tags;
 }

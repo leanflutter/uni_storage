@@ -8,7 +8,7 @@ class Delete {
   });
 
   /// The object to delete.
-  final ObjectIdentifier objects;
+  final List<ObjectIdentifier> objects;
 
   /// Element to enable quiet mode for the request. When you add this element,
   /// you must set its value to true.

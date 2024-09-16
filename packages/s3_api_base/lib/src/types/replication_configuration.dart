@@ -15,5 +15,5 @@ class ReplicationConfiguration {
 
   /// A container for one or more replication rules. A replication configuration
   /// must have at least one rule and can contain a maximum of 1,000 rules.
-  final ReplicationRule rules;
+  final List<ReplicationRule> rules;
 }

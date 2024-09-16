@@ -26,7 +26,7 @@ class LoggingEnabled {
   final String targetPrefix;
 
   /// Container for granting information.
-  final TargetGrant? targetGrants;
+  final List<TargetGrant>? targetGrants;
 
   /// Amazon S3 key format for log objects.
   final TargetObjectKeyFormat? targetObjectKeyFormat;

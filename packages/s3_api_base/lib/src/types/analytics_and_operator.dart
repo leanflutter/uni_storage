@@ -15,5 +15,5 @@ class AnalyticsAndOperator {
   final String? prefix;
 
   /// The list of tags to use when evaluating an AND predicate.
-  final Tag? tags;
+  final List<Tag>? tags;
 }
