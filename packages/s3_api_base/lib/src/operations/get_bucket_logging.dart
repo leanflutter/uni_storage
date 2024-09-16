@@ -1,16 +1,4 @@
-import 'package:s3_api_base/src/types/logging_enabled.dart';
-
-/// Root level tag for the BucketLoggingStatus parameters.
-class BucketLoggingStatus {
-  BucketLoggingStatus({
-    this.loggingEnabled,
-  });
-
-  /// Describes where logs are stored and the prefix that Amazon S3 assigns to
-  /// all log object keys for a bucket. For more information, see PUT Bucket
-  /// logging in the Amazon S3 API Reference.
-  final LoggingEnabled? loggingEnabled;
-}
+import 'package:s3_api_base/src/types/bucket_logging_status.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketLoggingOperation {

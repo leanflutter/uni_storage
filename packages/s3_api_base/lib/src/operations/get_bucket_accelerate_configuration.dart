@@ -1,12 +1,4 @@
-/// Root level tag for the AccelerateConfiguration parameters.
-class AccelerateConfiguration {
-  AccelerateConfiguration({
-    this.status,
-  });
-
-  /// The accelerate configuration of the bucket.
-  final String? status;
-}
+import 'package:s3_api_base/src/types/accelerate_configuration.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketAccelerateConfigurationOperation {

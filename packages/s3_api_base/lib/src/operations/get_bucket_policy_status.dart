@@ -1,13 +1,4 @@
-/// Root level tag for the PolicyStatus parameters.
-class PolicyStatus {
-  PolicyStatus({
-    this.isPublic,
-  });
-
-  /// The policy status for this bucket. TRUE indicates that this bucket is
-  /// public. FALSE indicates that the bucket is not public.
-  final bool? isPublic;
-}
+import 'package:s3_api_base/src/types/policy_status.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketPolicyStatusOperation {

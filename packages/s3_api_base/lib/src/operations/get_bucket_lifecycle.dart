@@ -1,14 +1,4 @@
-import 'package:s3_api_base/src/types/rule.dart';
-
-/// Root level tag for the LifecycleConfiguration parameters.
-class LifecycleConfiguration {
-  LifecycleConfiguration({
-    this.rule,
-  });
-
-  /// Container for a lifecycle rule.
-  final List<Rule>? rule;
-}
+import 'package:s3_api_base/src/types/lifecycle_configuration.dart';
 
 /// For an updated version of this API, see GetBucketLifecycleConfiguration. If
 /// you configured a bucket lifecycle using the filter element, you should see

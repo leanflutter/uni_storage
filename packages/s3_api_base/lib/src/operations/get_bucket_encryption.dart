@@ -1,15 +1,4 @@
-import 'package:s3_api_base/src/types/server_side_encryption_rule.dart';
-
-/// Root level tag for the ServerSideEncryptionConfiguration parameters.
-class ServerSideEncryptionConfiguration {
-  ServerSideEncryptionConfiguration({
-    this.rule,
-  });
-
-  /// Container for information about a particular server-side encryption
-  /// configuration rule.
-  final List<ServerSideEncryptionRule>? rule;
-}
+import 'package:s3_api_base/src/types/server_side_encryption_configuration.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketEncryptionOperation {

@@ -1,19 +1,4 @@
-import 'package:s3_api_base/src/types/grant.dart';
-import 'package:s3_api_base/src/types/owner.dart';
-
-/// Root level tag for the AccessControlPolicy parameters.
-class AccessControlPolicy {
-  AccessControlPolicy({
-    this.grants,
-    this.owner,
-  });
-
-  /// A list of grants.
-  final List<Grant>? grants;
-
-  /// Container for the bucket owner's display name and ID.
-  final Owner? owner;
-}
+import 'package:s3_api_base/src/types/access_control_policy.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketAclOperation {

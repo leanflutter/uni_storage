@@ -2,8 +2,8 @@ import 'package:s3_api_base/src/types/common_prefix.dart';
 import 'package:s3_api_base/src/types/object.dart';
 
 /// Root level tag for the ListBucketResult parameters.
-class ListBucketResult {
-  ListBucketResult({
+class ListBucketResultV2 {
+  ListBucketResultV2({
     this.commonPrefixes,
     this.contents,
     this.continuationToken,
@@ -82,7 +82,7 @@ class ListBucketResult {
 /// objects, see Listing object keys programmatically in the Amazon S3 User
 /// Guide. To get a list of your buckets, see ListBuckets.
 abstract mixin class ListObjectsV2Operation {
-  Future<ListBucketResult> listObjectsV2({
+  Future<ListBucketResultV2> listObjectsV2({
     ///  Directory buckets - When you use this operation with a directory
     /// bucket, you must use virtual-hosted-style requests in the format
     /// Bucket_name.s3express-az_id.region.amazonaws.com. Path-style requests

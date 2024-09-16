@@ -144,57 +144,70 @@ extension on S3Operation {
   String toDartClass() {
     final buffer = StringBuffer();
     S3Variable? rootTag;
+    String? resultClassName;
     if (responseElements.isNotEmpty) {
       rootTag = responseElements.first;
-      final fields = responseElements
-          .where((e) => !e.description.contains('Root level tag'))
-          .toList();
+      resultClassName = rootTag.name.pascalCase;
+      if (name.endsWith('V2')) {
+        resultClassName = '${resultClassName}V2';
+      }
+      if (!_generatedTypes.contains(rootTag.name)) {
+        final fields = responseElements
+            .where((e) => !e.description.contains('Root level tag'))
+            .toList();
 
-      List<String> dartImportTypes = fields
-          .where((e) {
-            return !_kDartTypes.values.contains(e.dartType) &&
-                e.dartType != 'dynamic' &&
-                e.dartType != 'List<String>';
-          })
-          .map((e) => e.dartType.replaceAll('List<', '').replaceAll('>', ''))
-          .toList()
-        ..sort((a, b) => a.compareTo(b));
-      if (dartImportTypes.isNotEmpty) {
-        for (final importType in dartImportTypes) {
-          buffer.writeln(
-            'import \'package:s3_api_base/src/types/${_toDartFileName(importType)}.dart\';',
-          );
+        List<String> dartImportTypes = fields
+            .where((e) {
+              return !_kDartTypes.values.contains(e.dartType) &&
+                  e.dartType != 'dynamic' &&
+                  e.dartType != 'List<String>';
+            })
+            .map((e) => e.dartType.replaceAll('List<', '').replaceAll('>', ''))
+            .toList()
+          ..sort((a, b) => a.compareTo(b));
+        if (dartImportTypes.isNotEmpty) {
+          for (final importType in dartImportTypes) {
+            buffer.writeln(
+              'import \'package:s3_api_base/src/types/${_toDartFileName(importType)}.dart\';',
+            );
+          }
+          buffer.writeln();
         }
+
+        // Add a doc comment.
+        if (rootTag.description.isNotEmpty) {
+          buffer.writeln(_toDartDocComment(rootTag.description));
+        }
+        // Add the class definition.
+        buffer.writeln('class $resultClassName {');
+        if (fields.isNotEmpty) {
+          // Add a constructor.
+          buffer.writeln('  $resultClassName({');
+          for (final field in fields) {
+            final requiredStr = field.required ? 'required ' : '';
+            buffer.writeln('    ${requiredStr}this.${field.dartName},');
+          }
+          buffer.writeln('  });');
+          // Add fields.
+          for (final field in fields) {
+            buffer.writeln();
+            if (field.description.isNotEmpty) {
+              buffer.writeln(_toDartDocComment(field.description, indent: 2));
+            }
+            final nullable = field.required ? '' : '?';
+            buffer.writeln(
+              '  final ${field.dartType}$nullable ${field.dartName};',
+            );
+          }
+        }
+        buffer.writeln('}');
+        buffer.writeln();
+      } else {
+        buffer.writeln(
+          'import \'package:s3_api_base/src/types/${_toDartFileName(rootTag.name)}.dart\';',
+        );
         buffer.writeln();
       }
-
-      // Add a doc comment.
-      if (rootTag.description.isNotEmpty) {
-        buffer.writeln(_toDartDocComment(rootTag.description));
-      }
-      // Add the class definition.
-      buffer.writeln('class ${rootTag.name.pascalCase} {');
-      if (fields.isNotEmpty) {
-        // Add a constructor.
-        buffer.writeln('  ${rootTag.name.pascalCase}({');
-        for (final field in fields) {
-          final requiredStr = field.required ? 'required ' : '';
-          buffer.writeln('    ${requiredStr}this.${field.dartName},');
-        }
-        buffer.writeln('  });');
-        // Add fields.
-        for (final field in fields) {
-          buffer.writeln();
-          if (field.description.isNotEmpty) {
-            buffer.writeln(_toDartDocComment(field.description, indent: 2));
-          }
-          final nullable = field.required ? '' : '?';
-          buffer
-              .writeln('  final ${field.dartType}$nullable ${field.dartName};');
-        }
-      }
-      buffer.writeln('}');
-      buffer.writeln();
     }
 
     // Add a doc comment.
@@ -203,8 +216,9 @@ extension on S3Operation {
     }
     buffer.writeln('abstract mixin class ${name}Operation {');
     if (uriRequestParameters.isNotEmpty) {
-      buffer
-          .writeln('  Future<${rootTag?.name ?? 'void'}> ${name.camelCase}({');
+      buffer.writeln(
+        '  Future<${resultClassName ?? 'void'}> ${name.camelCase}({',
+      );
       int i = 0;
       for (var param in uriRequestParameters) {
         String type = param.dartType == 'dynamic' ? 'String' : param.dartType;
@@ -305,7 +319,7 @@ Future<void> _genApiOperations() async {
         File('lib/src/operations/${_toDartFileName(s3Operation.name)}.dart');
     await file.writeAsString(s3Operation.toDartClass());
     imports.add(
-      'import \'package:s3_api_base/src/operations/${_toDartFileName(s3Operation.name)}.dart\';',
+      'export \'package:s3_api_base/src/operations/${_toDartFileName(s3Operation.name)}.dart\';',
     );
     withs.add('${s3Operation.name}Operation');
   }
@@ -313,7 +327,7 @@ Future<void> _genApiOperations() async {
   withs.sort((a, b) => a.compareTo(b));
   print(imports.join('\n'));
   print(withs.join(',\n'));
-  File('lib/s3_operations.dart').writeAsString(imports.join('\n'));
+  File('lib/s3_operations.dart').writeAsString('${imports.join('\n')}\n');
 }
 
 Future<void> main() async {

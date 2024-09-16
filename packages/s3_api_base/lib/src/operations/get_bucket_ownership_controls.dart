@@ -1,14 +1,4 @@
-import 'package:s3_api_base/src/types/ownership_controls_rule.dart';
-
-/// Root level tag for the OwnershipControls parameters.
-class OwnershipControls {
-  OwnershipControls({
-    this.rule,
-  });
-
-  /// The container element for an ownership control rule.
-  final List<OwnershipControlsRule>? rule;
-}
+import 'package:s3_api_base/src/types/ownership_controls.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketOwnershipControlsOperation {

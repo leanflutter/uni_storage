@@ -1,15 +1,4 @@
-import 'package:s3_api_base/src/types/cors_rule.dart';
-
-/// Root level tag for the CORSConfiguration parameters.
-class CORSConfiguration {
-  CORSConfiguration({
-    this.cORSRule,
-  });
-
-  /// A set of origins and methods (cross-origin access that you want to allow).
-  /// You can add up to 100 rules to the configuration.
-  final List<CORSRule>? cORSRule;
-}
+import 'package:s3_api_base/src/types/cors_configuration.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketCorsOperation {

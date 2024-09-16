@@ -1,19 +1,4 @@
-/// Root level tag for the VersioningConfiguration parameters.
-class VersioningConfiguration {
-  VersioningConfiguration({
-    this.mFADelete,
-    this.status,
-  });
-
-  /// Specifies whether MFA delete is enabled in the bucket versioning
-  /// configuration. This element is only returned if the bucket has been
-  /// configured with MFA delete. If the bucket has never been so configured,
-  /// this element is not returned.
-  final String? mFADelete;
-
-  /// The versioning state of the bucket.
-  final String? status;
-}
+import 'package:s3_api_base/src/types/versioning_configuration.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketVersioningOperation {

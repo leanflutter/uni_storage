@@ -1,14 +1,4 @@
-import 'package:s3_api_base/src/types/tag.dart';
-
-/// Root level tag for the Tagging parameters.
-class Tagging {
-  Tagging({
-    this.tagSet,
-  });
-
-  /// Contains the tag set.
-  final List<Tag>? tagSet;
-}
+import 'package:s3_api_base/src/types/tagging.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetObjectTaggingOperation {

@@ -1,12 +1,4 @@
-/// Root level tag for the RequestPaymentConfiguration parameters.
-class RequestPaymentConfiguration {
-  RequestPaymentConfiguration({
-    this.payer,
-  });
-
-  /// Specifies who pays for the download and request fees.
-  final String? payer;
-}
+import 'package:s3_api_base/src/types/request_payment_configuration.dart';
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketRequestPaymentOperation {
