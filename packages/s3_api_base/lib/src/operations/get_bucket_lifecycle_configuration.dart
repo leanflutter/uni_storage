@@ -12,7 +12,7 @@ class LifecycleConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketLifecycleConfigurationOperation {
-  Future<dynamic> getBucketLifecycleConfiguration({
+  Future<LifecycleConfiguration> getBucketLifecycleConfiguration({
     /// The name of the bucket for which to get the lifecycle information.
     String bucket,
 

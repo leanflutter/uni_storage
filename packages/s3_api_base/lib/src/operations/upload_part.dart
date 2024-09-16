@@ -1,6 +1,6 @@
 /// Uploads a part in a multipart upload.
 abstract mixin class UploadPartOperation {
-  Future<dynamic> uploadPart({
+  Future<void> uploadPart({
     /// The name of the bucket to which the multipart upload was initiated.
     String bucket,
 

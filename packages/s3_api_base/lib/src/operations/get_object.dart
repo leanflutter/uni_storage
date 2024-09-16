@@ -1,6 +1,6 @@
 /// Retrieves an object from Amazon S3.
 abstract mixin class GetObjectOperation {
-  Future<dynamic> getObject({
+  Future<void> getObject({
     /// The bucket name containing the object.
     String bucket,
 

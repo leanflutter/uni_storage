@@ -22,7 +22,7 @@ class ObjectLockConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetObjectLockConfigurationOperation {
-  Future<dynamic> getObjectLockConfiguration({
+  Future<ObjectLockConfiguration> getObjectLockConfiguration({
     /// The bucket whose Object Lock configuration you want to retrieve.
     String bucket,
 

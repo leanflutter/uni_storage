@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutObjectLegalHoldOperation {
-  Future<dynamic> putObjectLegalHold({
+  Future<void> putObjectLegalHold({
     /// The bucket name containing the object that you want to place a legal
     /// hold on.
     String bucket,

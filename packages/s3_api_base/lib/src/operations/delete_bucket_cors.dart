@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeleteBucketCorsOperation {
-  Future<dynamic> deleteBucketCors({
+  Future<void> deleteBucketCors({
     /// Specifies the bucket whose cors configuration is being deleted.
     String bucket,
 

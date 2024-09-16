@@ -1,6 +1,6 @@
 /// Deletes the policy of a specified bucket.
 abstract mixin class DeleteBucketPolicyOperation {
-  Future<dynamic> deleteBucketPolicy({
+  Future<void> deleteBucketPolicy({
     /// The bucket name.
     String bucket,
 

@@ -19,7 +19,7 @@ class ReplicationConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketReplicationOperation {
-  Future<dynamic> getBucketReplication({
+  Future<ReplicationConfiguration> getBucketReplication({
     /// The bucket name for which to get the replication information.
     String bucket,
 

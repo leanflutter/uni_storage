@@ -11,7 +11,7 @@ class PolicyStatus {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketPolicyStatusOperation {
-  Future<dynamic> getBucketPolicyStatus({
+  Future<PolicyStatus> getBucketPolicyStatus({
     /// The name of the Amazon S3 bucket whose policy status you want to
     /// retrieve.
     String bucket,

@@ -1,6 +1,6 @@
 /// Adds an object to a bucket.
 abstract mixin class PutObjectOperation {
-  Future<dynamic> putObject({
+  Future<void> putObject({
     /// The bucket name to which the PUT action was initiated.
     String bucket,
 

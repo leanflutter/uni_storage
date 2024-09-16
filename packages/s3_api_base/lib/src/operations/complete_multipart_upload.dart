@@ -70,7 +70,7 @@ class CompleteMultipartUploadResult {
 
 /// Completes a multipart upload by assembling previously uploaded parts.
 abstract mixin class CompleteMultipartUploadOperation {
-  Future<dynamic> completeMultipartUpload({
+  Future<CompleteMultipartUploadResult> completeMultipartUpload({
     /// Name of the bucket to which the multipart upload was initiated.
     String bucket,
 

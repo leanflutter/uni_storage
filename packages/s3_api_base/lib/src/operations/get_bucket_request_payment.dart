@@ -10,7 +10,7 @@ class RequestPaymentConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketRequestPaymentOperation {
-  Future<dynamic> getBucketRequestPayment({
+  Future<RequestPaymentConfiguration> getBucketRequestPayment({
     /// The name of the bucket for which to get the payment request
     /// configuration
     String bucket,

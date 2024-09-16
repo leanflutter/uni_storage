@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutPublicAccessBlockOperation {
-  Future<dynamic> putPublicAccessBlock({
+  Future<void> putPublicAccessBlock({
     /// The name of the Amazon S3 bucket whose PublicAccessBlock configuration
     /// you want to set.
     String bucket,

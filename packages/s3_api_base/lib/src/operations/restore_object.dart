@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class RestoreObjectOperation {
-  Future<dynamic> restoreObject({
+  Future<void> restoreObject({
     /// The bucket name containing the object to restore.
     String bucket,
 

@@ -31,7 +31,7 @@ class PublicAccessBlockConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetPublicAccessBlockOperation {
-  Future<dynamic> getPublicAccessBlock({
+  Future<PublicAccessBlockConfiguration> getPublicAccessBlock({
     /// The name of the Amazon S3 bucket whose PublicAccessBlock configuration
     /// you want to retrieve.
     String bucket,

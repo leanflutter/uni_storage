@@ -1,7 +1,7 @@
 /// Removes an object from a bucket. The behavior depends on the bucket's
 /// versioning state:
 abstract mixin class DeleteObjectOperation {
-  Future<dynamic> deleteObject({
+  Future<void> deleteObject({
     /// The bucket name of the bucket containing the object.
     String bucket,
 

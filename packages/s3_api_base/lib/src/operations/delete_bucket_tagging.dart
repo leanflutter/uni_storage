@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeleteBucketTaggingOperation {
-  Future<dynamic> deleteBucketTagging({
+  Future<void> deleteBucketTagging({
     /// The bucket that has the tag set to be removed.
     String bucket,
 

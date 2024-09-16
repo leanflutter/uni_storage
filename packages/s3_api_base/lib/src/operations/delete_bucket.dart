@@ -2,7 +2,7 @@
 /// markers) in the bucket must be deleted before the bucket itself can be
 /// deleted.
 abstract mixin class DeleteBucketOperation {
-  Future<dynamic> deleteBucket({
+  Future<void> deleteBucket({
     /// Specifies the bucket being deleted.
     String bucket,
 

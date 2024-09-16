@@ -19,6 +19,8 @@ const _kDartTypes = {
   'Boolean': 'bool',
 };
 
+final _generatedTypes = [];
+
 /// Converts a description to a Dart doc comment.
 String _toDartDocComment(String description, {int indent = 0}) {
   final delimiterWithIndent = '${' ' * indent}///';
@@ -141,8 +143,9 @@ extension on S3Variable {
 extension on S3Operation {
   String toDartClass() {
     final buffer = StringBuffer();
+    S3Variable? rootTag;
     if (responseElements.isNotEmpty) {
-      final S3Variable rootTag = responseElements.first;
+      rootTag = responseElements.first;
       final fields = responseElements
           .where((e) => !e.description.contains('Root level tag'))
           .toList();
@@ -164,6 +167,7 @@ extension on S3Operation {
         }
         buffer.writeln();
       }
+
       // Add a doc comment.
       if (rootTag.description.isNotEmpty) {
         buffer.writeln(_toDartDocComment(rootTag.description));
@@ -199,7 +203,8 @@ extension on S3Operation {
     }
     buffer.writeln('abstract mixin class ${name}Operation {');
     if (uriRequestParameters.isNotEmpty) {
-      buffer.writeln('  Future<dynamic> ${name.camelCase}({');
+      buffer
+          .writeln('  Future<${rootTag?.name ?? 'void'}> ${name.camelCase}({');
       int i = 0;
       for (var param in uriRequestParameters) {
         String type = param.dartType == 'dynamic' ? 'String' : param.dartType;
@@ -258,6 +263,7 @@ Future<void> _genS3ApiTypes() async {
     final file = File('lib/src/types/${_toDartFileName(s3Type.name)}.dart');
     await file.writeAsString(s3Type.toDartClass());
     s3Types.add(s3Type);
+    _generatedTypes.add(s3Type.name);
   }
   s3Types.sort(
     (a, b) => _toDartFileName(a.dartName).compareTo(
@@ -307,6 +313,7 @@ Future<void> _genApiOperations() async {
   withs.sort((a, b) => a.compareTo(b));
   print(imports.join('\n'));
   print(withs.join(',\n'));
+  File('lib/s3_operations.dart').writeAsString(imports.join('\n'));
 }
 
 Future<void> main() async {

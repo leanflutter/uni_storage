@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeleteBucketOwnershipControlsOperation {
-  Future<dynamic> deleteBucketOwnershipControls({
+  Future<void> deleteBucketOwnershipControls({
     /// The Amazon S3 bucket whose OwnershipControls you want to delete.
     String bucket,
 

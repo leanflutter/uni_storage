@@ -20,7 +20,7 @@ class ListDirectoryBucketsOutput {
 /// sender of the request. For more information about directory buckets, see
 /// Directory buckets in the Amazon S3 User Guide.
 abstract mixin class ListDirectoryBucketsOperation {
-  Future<dynamic> listDirectoryBuckets({
+  Future<ListDirectoryBucketsOutput> listDirectoryBuckets({
     ///  ContinuationToken indicates to Amazon S3 that the list is being
     /// continued on buckets in this account with a token. ContinuationToken is
     /// obfuscated and is not a real bucket name. You can use this

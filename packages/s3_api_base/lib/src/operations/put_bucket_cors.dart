@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketCorsOperation {
-  Future<dynamic> putBucketCors({
+  Future<void> putBucketCors({
     /// Specifies the bucket impacted by the corsconfiguration.
     String bucket,
 

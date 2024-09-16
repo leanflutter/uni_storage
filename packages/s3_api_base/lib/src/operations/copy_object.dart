@@ -39,7 +39,7 @@ class CopyObjectResult {
 
 /// Creates a copy of an object that is already stored in Amazon S3.
 abstract mixin class CopyObjectOperation {
-  Future<dynamic> copyObject({
+  Future<CopyObjectResult> copyObject({
     /// The name of the destination bucket.
     String bucket,
 

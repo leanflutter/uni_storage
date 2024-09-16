@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeleteBucketEncryptionOperation {
-  Future<dynamic> deleteBucketEncryption({
+  Future<void> deleteBucketEncryption({
     /// The name of the bucket containing the server-side encryption
     /// configuration to delete.
     String bucket,

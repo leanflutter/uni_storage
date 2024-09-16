@@ -77,7 +77,7 @@ class ListMultipartUploadsResult {
 /// by the CreateMultipartUpload request, but has not yet been completed or
 /// aborted.
 abstract mixin class ListMultipartUploadsOperation {
-  Future<dynamic> listMultipartUploads({
+  Future<ListMultipartUploadsResult> listMultipartUploads({
     /// The name of the bucket to which the multipart upload was initiated.
     String bucket,
 

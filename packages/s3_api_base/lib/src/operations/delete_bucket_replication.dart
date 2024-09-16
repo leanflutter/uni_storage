@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeleteBucketReplicationOperation {
-  Future<dynamic> deleteBucketReplication({
+  Future<void> deleteBucketReplication({
     ///  The bucket name.
     String bucket,
 

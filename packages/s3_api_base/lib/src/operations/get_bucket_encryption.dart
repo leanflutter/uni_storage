@@ -13,7 +13,7 @@ class ServerSideEncryptionConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketEncryptionOperation {
-  Future<dynamic> getBucketEncryption({
+  Future<ServerSideEncryptionConfiguration> getBucketEncryption({
     /// The name of the bucket from which the server-side encryption
     /// configuration is retrieved.
     String bucket,

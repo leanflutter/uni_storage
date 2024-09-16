@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketRequestPaymentOperation {
-  Future<dynamic> putBucketRequestPayment({
+  Future<void> putBucketRequestPayment({
     /// The bucket name.
     String bucket,
 

@@ -44,7 +44,7 @@ class InventoryConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketInventoryConfigurationOperation {
-  Future<dynamic> getBucketInventoryConfiguration({
+  Future<InventoryConfiguration> getBucketInventoryConfiguration({
     /// The name of the bucket containing the inventory configuration to
     /// retrieve.
     String bucket,

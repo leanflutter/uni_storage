@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketVersioningOperation {
-  Future<dynamic> putBucketVersioning({
+  Future<void> putBucketVersioning({
     /// The bucket name.
     String bucket,
 

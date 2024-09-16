@@ -10,7 +10,7 @@ class LegalHold {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetObjectLegalHoldOperation {
-  Future<dynamic> getObjectLegalHold({
+  Future<LegalHold> getObjectLegalHold({
     /// The bucket name containing the object whose legal hold status you want
     /// to retrieve.
     String bucket,

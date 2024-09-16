@@ -17,7 +17,7 @@ class AccessControlPolicy {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketAclOperation {
-  Future<dynamic> getBucketAcl({
+  Future<AccessControlPolicy> getBucketAcl({
     /// Specifies the S3 bucket whose ACL is being requested.
     String bucket,
 

@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeleteBucketAnalyticsConfigurationOperation {
-  Future<dynamic> deleteBucketAnalyticsConfiguration({
+  Future<void> deleteBucketAnalyticsConfiguration({
     /// The name of the bucket from which an analytics configuration is deleted.
     String bucket,
 

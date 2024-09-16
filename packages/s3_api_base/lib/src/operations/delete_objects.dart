@@ -22,7 +22,7 @@ class DeleteResult {
 /// then this operation provides a suitable alternative to sending individual
 /// delete requests, reducing per-request overhead.
 abstract mixin class DeleteObjectsOperation {
-  Future<dynamic> deleteObjects({
+  Future<DeleteResult> deleteObjects({
     /// The bucket name containing the objects to delete.
     String bucket,
 

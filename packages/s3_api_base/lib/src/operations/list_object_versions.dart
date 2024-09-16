@@ -79,7 +79,7 @@ class ListVersionsResult {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class ListObjectVersionsOperation {
-  Future<dynamic> listObjectVersions({
+  Future<ListVersionsResult> listObjectVersions({
     /// The bucket name that contains the objects.
     String bucket,
 

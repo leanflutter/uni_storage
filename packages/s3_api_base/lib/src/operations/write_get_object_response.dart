@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class WriteGetObjectResponseOperation {
-  Future<dynamic> writeGetObjectResponse({
+  Future<void> writeGetObjectResponse({
     /// The size of the content body in bytes.
     String? contentLength,
 

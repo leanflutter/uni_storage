@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeleteBucketInventoryConfigurationOperation {
-  Future<dynamic> deleteBucketInventoryConfiguration({
+  Future<void> deleteBucketInventoryConfiguration({
     /// The name of the bucket containing the inventory configuration to delete.
     String bucket,
 

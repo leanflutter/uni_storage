@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeletePublicAccessBlockOperation {
-  Future<dynamic> deletePublicAccessBlock({
+  Future<void> deletePublicAccessBlock({
     /// The Amazon S3 bucket whose PublicAccessBlock configuration you want to
     /// delete.
     String bucket,

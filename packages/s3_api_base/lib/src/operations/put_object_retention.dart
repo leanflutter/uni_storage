@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutObjectRetentionOperation {
-  Future<dynamic> putObjectRetention({
+  Future<void> putObjectRetention({
     /// The bucket name that contains the object you want to apply this Object
     /// Retention configuration to.
     String bucket,

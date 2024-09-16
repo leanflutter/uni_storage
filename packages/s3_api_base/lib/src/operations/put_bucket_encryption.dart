@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketEncryptionOperation {
-  Future<dynamic> putBucketEncryption({
+  Future<void> putBucketEncryption({
     /// Specifies default encryption for a bucket using server-side encryption
     /// with different key options. By default, all buckets have a default
     /// encryption configuration that uses server-side encryption with Amazon S3

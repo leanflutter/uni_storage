@@ -1,6 +1,6 @@
 /// Returns the policy of a specified bucket.
 abstract mixin class GetBucketPolicyOperation {
-  Future<dynamic> getBucketPolicy({
+  Future<void> getBucketPolicy({
     /// The bucket name to get the bucket policy for.
     String bucket,
 

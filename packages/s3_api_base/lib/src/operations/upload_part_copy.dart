@@ -57,7 +57,7 @@ class CopyPartResult {
 /// your request. To specify a byte range, you add the request header
 /// x-amz-copy-source-range in your request.
 abstract mixin class UploadPartCopyOperation {
-  Future<dynamic> uploadPartCopy({
+  Future<CopyPartResult> uploadPartCopy({
     /// The bucket name.
     String bucket,
 

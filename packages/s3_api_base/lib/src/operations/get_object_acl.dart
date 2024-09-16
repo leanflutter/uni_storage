@@ -17,7 +17,7 @@ class AccessControlPolicy {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetObjectAclOperation {
-  Future<dynamic> getObjectAcl({
+  Future<AccessControlPolicy> getObjectAcl({
     /// The bucket name that contains the object for which to get the ACL
     /// information.
     String bucket,

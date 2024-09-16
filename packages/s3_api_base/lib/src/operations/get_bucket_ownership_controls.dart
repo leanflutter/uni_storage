@@ -12,7 +12,7 @@ class OwnershipControls {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketOwnershipControlsOperation {
-  Future<dynamic> getBucketOwnershipControls({
+  Future<OwnershipControls> getBucketOwnershipControls({
     /// The name of the Amazon S3 bucket whose OwnershipControls you want to
     /// retrieve.
     String bucket,

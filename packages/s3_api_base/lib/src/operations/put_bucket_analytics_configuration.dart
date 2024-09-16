@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketAnalyticsConfigurationOperation {
-  Future<dynamic> putBucketAnalyticsConfiguration({
+  Future<void> putBucketAnalyticsConfiguration({
     /// The name of the bucket to which an analytics configuration is stored.
     String bucket,
 

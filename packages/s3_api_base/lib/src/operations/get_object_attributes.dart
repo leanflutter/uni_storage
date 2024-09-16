@@ -33,7 +33,7 @@ class GetObjectAttributesOutput {
 /// itself. This operation is useful if you're interested only in an object's
 /// metadata.
 abstract mixin class GetObjectAttributesOperation {
-  Future<dynamic> getObjectAttributes({
+  Future<GetObjectAttributesOutput> getObjectAttributes({
     /// The name of the bucket that contains the object.
     String bucket,
 

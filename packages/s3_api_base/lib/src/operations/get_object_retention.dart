@@ -14,7 +14,7 @@ class Retention {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetObjectRetentionOperation {
-  Future<dynamic> getObjectRetention({
+  Future<Retention> getObjectRetention({
     /// The bucket name containing the object whose retention settings you want
     /// to retrieve.
     String bucket,

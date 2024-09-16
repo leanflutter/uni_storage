@@ -32,7 +32,7 @@ class Payload {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class SelectObjectContentOperation {
-  Future<dynamic> selectObjectContent({
+  Future<Payload> selectObjectContent({
     /// The S3 bucket.
     String bucket,
 

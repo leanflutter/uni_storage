@@ -10,7 +10,7 @@ class AccelerateConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketAccelerateConfigurationOperation {
-  Future<dynamic> getBucketAccelerateConfiguration({
+  Future<AccelerateConfiguration> getBucketAccelerateConfiguration({
     /// The name of the bucket for which the accelerate configuration is
     /// retrieved.
     String bucket,

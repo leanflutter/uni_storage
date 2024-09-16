@@ -70,7 +70,7 @@ class ListPartsResult {
 
 /// Lists the parts that have been uploaded for a specific multipart upload.
 abstract mixin class ListPartsOperation {
-  Future<dynamic> listParts({
+  Future<ListPartsResult> listParts({
     /// The name of the bucket to which the parts are being uploaded.
     String bucket,
 

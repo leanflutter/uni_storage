@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketWebsiteOperation {
-  Future<dynamic> putBucketWebsite({
+  Future<void> putBucketWebsite({
     /// The bucket name.
     String bucket,
 

@@ -26,7 +26,7 @@ class NotificationConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketNotificationOperation {
-  Future<dynamic> getBucketNotification({
+  Future<NotificationConfiguration> getBucketNotification({
     /// The name of the bucket for which to get the notification configuration.
     String bucket,
 

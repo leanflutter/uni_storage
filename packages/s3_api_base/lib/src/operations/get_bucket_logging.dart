@@ -14,7 +14,7 @@ class BucketLoggingStatus {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketLoggingOperation {
-  Future<dynamic> getBucketLogging({
+  Future<BucketLoggingStatus> getBucketLogging({
     /// The bucket name for which to get the logging information.
     String bucket,
 

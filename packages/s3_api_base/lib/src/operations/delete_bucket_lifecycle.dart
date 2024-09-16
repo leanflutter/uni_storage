@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeleteBucketLifecycleOperation {
-  Future<dynamic> deleteBucketLifecycle({
+  Future<void> deleteBucketLifecycle({
     /// The bucket name of the lifecycle to delete.
     String bucket,
 

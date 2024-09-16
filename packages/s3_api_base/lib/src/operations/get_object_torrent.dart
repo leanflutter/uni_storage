@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class GetObjectTorrentOperation {
-  Future<dynamic> getObjectTorrent({
+  Future<void> getObjectTorrent({
     /// The name of the bucket containing the object for which to get the
     /// torrent files.
     String bucket,

@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketNotificationOperation {
-  Future<dynamic> putBucketNotification({
+  Future<void> putBucketNotification({
     /// The name of the bucket.
     String bucket,
 

@@ -12,7 +12,7 @@ class Tagging {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetObjectTaggingOperation {
-  Future<dynamic> getObjectTagging({
+  Future<Tagging> getObjectTagging({
     /// The bucket name containing the object for which to get the tagging
     /// information.
     String bucket,

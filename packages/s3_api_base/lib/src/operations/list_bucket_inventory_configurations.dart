@@ -30,7 +30,7 @@ class ListInventoryConfigurationsResult {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class ListBucketInventoryConfigurationsOperation {
-  Future<dynamic> listBucketInventoryConfigurations({
+  Future<ListInventoryConfigurationsResult> listBucketInventoryConfigurations({
     /// The name of the bucket containing the inventory configurations to
     /// retrieve.
     String bucket,

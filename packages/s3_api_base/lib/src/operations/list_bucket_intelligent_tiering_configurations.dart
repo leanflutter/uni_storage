@@ -31,7 +31,7 @@ class ListBucketIntelligentTieringConfigurationsOutput {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class ListBucketIntelligentTieringConfigurationsOperation {
-  Future<dynamic> listBucketIntelligentTieringConfigurations({
+  Future<ListBucketIntelligentTieringConfigurationsOutput> listBucketIntelligentTieringConfigurations({
     /// The name of the Amazon S3 bucket whose configuration you want to modify
     /// or retrieve.
     String bucket,

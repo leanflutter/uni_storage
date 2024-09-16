@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketOwnershipControlsOperation {
-  Future<dynamic> putBucketOwnershipControls({
+  Future<void> putBucketOwnershipControls({
     /// The name of the Amazon S3 bucket whose OwnershipControls you want to
     /// set.
     String bucket,

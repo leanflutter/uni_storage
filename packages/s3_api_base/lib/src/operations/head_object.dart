@@ -2,7 +2,7 @@
 /// object itself. This operation is useful if you're interested only in an
 /// object's metadata.
 abstract mixin class HeadObjectOperation {
-  Future<dynamic> headObject({
+  Future<void> headObject({
     /// The name of the bucket that contains the object.
     String bucket,
 

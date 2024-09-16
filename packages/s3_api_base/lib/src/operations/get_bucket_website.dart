@@ -29,7 +29,7 @@ class WebsiteConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketWebsiteOperation {
-  Future<dynamic> getBucketWebsite({
+  Future<WebsiteConfiguration> getBucketWebsite({
     /// The bucket name for which to get the website configuration.
     String bucket,
 

@@ -13,7 +13,7 @@ class CORSConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketCorsOperation {
-  Future<dynamic> getBucketCors({
+  Future<CORSConfiguration> getBucketCors({
     /// The bucket name for which to get the cors configuration.
     String bucket,
 

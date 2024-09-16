@@ -21,7 +21,7 @@ class MetricsConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketMetricsConfigurationOperation {
-  Future<dynamic> getBucketMetricsConfiguration({
+  Future<MetricsConfiguration> getBucketMetricsConfiguration({
     /// The name of the bucket containing the metrics configuration to retrieve.
     String bucket,
 

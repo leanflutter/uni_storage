@@ -25,7 +25,7 @@ class InitiateMultipartUploadResult {
 /// information about multipart uploads, see Multipart Upload Overview in the
 /// Amazon S3 User Guide.
 abstract mixin class CreateMultipartUploadOperation {
-  Future<dynamic> createMultipartUpload({
+  Future<InitiateMultipartUploadResult> createMultipartUpload({
     /// The name of the bucket where the multipart upload is initiated and where
     /// the object is uploaded.
     String bucket,

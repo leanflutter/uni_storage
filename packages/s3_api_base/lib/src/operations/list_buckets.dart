@@ -24,7 +24,7 @@ class ListAllMyBucketsResult {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class ListBucketsOperation {
-  Future<dynamic> listBuckets({
+  Future<ListAllMyBucketsResult> listBuckets({
     ///  ContinuationToken indicates to Amazon S3 that the list is being
     /// continued on this bucket with a token. ContinuationToken is obfuscated
     /// and is not a real key. You can use this ContinuationToken for pagination

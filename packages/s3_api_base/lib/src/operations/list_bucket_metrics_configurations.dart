@@ -30,7 +30,7 @@ class ListMetricsConfigurationsResult {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class ListBucketMetricsConfigurationsOperation {
-  Future<dynamic> listBucketMetricsConfigurations({
+  Future<ListMetricsConfigurationsResult> listBucketMetricsConfigurations({
     /// The name of the bucket containing the metrics configurations to
     /// retrieve.
     String bucket,

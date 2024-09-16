@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketLoggingOperation {
-  Future<dynamic> putBucketLogging({
+  Future<void> putBucketLogging({
     /// The name of the bucket for which to set the logging parameters.
     String bucket,
 

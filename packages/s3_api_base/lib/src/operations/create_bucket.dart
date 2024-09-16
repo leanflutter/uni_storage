@@ -1,7 +1,7 @@
 /// This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts
 /// bucket, see CreateBucket.
 abstract mixin class CreateBucketOperation {
-  Future<dynamic> createBucket({
+  Future<void> createBucket({
     /// The name of the bucket to create.
     String bucket,
 

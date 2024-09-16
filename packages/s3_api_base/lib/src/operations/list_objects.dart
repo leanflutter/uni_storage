@@ -65,7 +65,7 @@ class ListBucketResult {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class ListObjectsOperation {
-  Future<dynamic> listObjects({
+  Future<ListBucketResult> listObjects({
     /// The name of the bucket containing the objects.
     String bucket,
 

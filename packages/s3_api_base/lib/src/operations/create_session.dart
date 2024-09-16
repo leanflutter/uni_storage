@@ -16,7 +16,7 @@ class CreateSessionOutput {
 /// include the Availability Zone in the request endpoint, see S3 Express One
 /// Zone APIs in the Amazon S3 User Guide.
 abstract mixin class CreateSessionOperation {
-  Future<dynamic> createSession({
+  Future<CreateSessionOutput> createSession({
     /// The name of the bucket that you create a session for.
     String bucket,
 

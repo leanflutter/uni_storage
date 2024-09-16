@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketTaggingOperation {
-  Future<dynamic> putBucketTagging({
+  Future<void> putBucketTagging({
     /// The bucket name.
     String bucket,
 

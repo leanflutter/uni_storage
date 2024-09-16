@@ -31,7 +31,7 @@ class ListBucketAnalyticsConfigurationResult {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class ListBucketAnalyticsConfigurationsOperation {
-  Future<dynamic> listBucketAnalyticsConfigurations({
+  Future<ListBucketAnalyticsConfigurationResult> listBucketAnalyticsConfigurations({
     /// The name of the bucket from which analytics configurations are
     /// retrieved.
     String bucket,

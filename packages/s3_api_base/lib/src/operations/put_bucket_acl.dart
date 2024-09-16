@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketAclOperation {
-  Future<dynamic> putBucketAcl({
+  Future<void> putBucketAcl({
     /// The bucket to which to apply the ACL.
     String bucket,
 

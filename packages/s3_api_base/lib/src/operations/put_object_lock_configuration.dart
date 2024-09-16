@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutObjectLockConfigurationOperation {
-  Future<dynamic> putObjectLockConfiguration({
+  Future<void> putObjectLockConfiguration({
     /// The bucket whose Object Lock configuration you want to create or
     /// replace.
     String bucket,

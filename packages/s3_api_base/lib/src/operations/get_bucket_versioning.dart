@@ -17,7 +17,7 @@ class VersioningConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketVersioningOperation {
-  Future<dynamic> getBucketVersioning({
+  Future<VersioningConfiguration> getBucketVersioning({
     /// The name of the bucket for which to get the versioning information.
     String bucket,
 

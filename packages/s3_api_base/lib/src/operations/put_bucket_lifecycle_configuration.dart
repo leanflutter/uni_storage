@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketLifecycleConfigurationOperation {
-  Future<dynamic> putBucketLifecycleConfiguration({
+  Future<void> putBucketLifecycleConfiguration({
     /// The name of the bucket for which to set the configuration.
     String bucket,
 

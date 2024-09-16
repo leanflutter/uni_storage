@@ -12,7 +12,7 @@ class LocationConstraint {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketLocationOperation {
-  Future<dynamic> getBucketLocation({
+  Future<LocationConstraint> getBucketLocation({
     /// The name of the bucket for which to get the location.
     String bucket,
 

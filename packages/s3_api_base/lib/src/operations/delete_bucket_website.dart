@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class DeleteBucketWebsiteOperation {
-  Future<dynamic> deleteBucketWebsite({
+  Future<void> deleteBucketWebsite({
     /// The bucket name for which you want to remove the website configuration.
     String bucket,
 

@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketInventoryConfigurationOperation {
-  Future<dynamic> putBucketInventoryConfiguration({
+  Future<void> putBucketInventoryConfiguration({
     /// The name of the bucket where the inventory configuration will be stored.
     String bucket,
 

@@ -1,6 +1,6 @@
 /// Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
 abstract mixin class PutBucketPolicyOperation {
-  Future<dynamic> putBucketPolicy({
+  Future<void> putBucketPolicy({
     /// The name of the bucket.
     String bucket,
 

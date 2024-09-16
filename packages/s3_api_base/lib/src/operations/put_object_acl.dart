@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutObjectAclOperation {
-  Future<dynamic> putObjectAcl({
+  Future<void> putObjectAcl({
     /// The bucket name that contains the object to which you want to attach the
     /// ACL.
     String bucket,

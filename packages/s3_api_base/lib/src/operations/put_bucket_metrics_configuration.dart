@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketMetricsConfigurationOperation {
-  Future<dynamic> putBucketMetricsConfiguration({
+  Future<void> putBucketMetricsConfiguration({
     /// The name of the bucket for which the metrics configuration is set.
     String bucket,
 

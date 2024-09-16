@@ -1,6 +1,6 @@
 /// This operation is not supported by directory buckets.
 abstract mixin class PutBucketAccelerateConfigurationOperation {
-  Future<dynamic> putBucketAccelerateConfiguration({
+  Future<void> putBucketAccelerateConfiguration({
     /// The name of the bucket for which the accelerate configuration is set.
     String bucket,
 

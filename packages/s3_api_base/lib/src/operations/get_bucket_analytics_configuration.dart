@@ -25,7 +25,7 @@ class AnalyticsConfiguration {
 
 /// This operation is not supported by directory buckets.
 abstract mixin class GetBucketAnalyticsConfigurationOperation {
-  Future<dynamic> getBucketAnalyticsConfiguration({
+  Future<AnalyticsConfiguration> getBucketAnalyticsConfiguration({
     /// The name of the bucket from which an analytics configuration is
     /// retrieved.
     String bucket,

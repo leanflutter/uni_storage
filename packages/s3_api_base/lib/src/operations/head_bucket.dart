@@ -2,7 +2,7 @@
 /// permission to access it. The action returns a 200 OK if the bucket exists
 /// and you have permission to access it.
 abstract mixin class HeadBucketOperation {
-  Future<dynamic> headBucket({
+  Future<void> headBucket({
     /// The bucket name.
     String bucket,
 

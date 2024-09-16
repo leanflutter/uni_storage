@@ -15,7 +15,7 @@ class LifecycleConfiguration {
 /// the updated version of this topic. This topic is provided for backward
 /// compatibility.
 abstract mixin class GetBucketLifecycleOperation {
-  Future<dynamic> getBucketLifecycle({
+  Future<LifecycleConfiguration> getBucketLifecycle({
     /// The name of the bucket for which to get the lifecycle information.
     String bucket,
 

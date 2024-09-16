@@ -6,7 +6,7 @@
 /// multipart upload multiple times in order to completely free all storage
 /// consumed by all parts.
 abstract mixin class AbortMultipartUploadOperation {
-  Future<dynamic> abortMultipartUpload({
+  Future<void> abortMultipartUpload({
     /// The bucket name to which the upload was taking place.
     String bucket,
 
