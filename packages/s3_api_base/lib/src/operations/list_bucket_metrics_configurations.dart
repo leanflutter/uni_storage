@@ -33,7 +33,7 @@ abstract mixin class ListBucketMetricsConfigurationsOperation {
   Future<ListMetricsConfigurationsResult> listBucketMetricsConfigurations({
     /// The name of the bucket containing the metrics configurations to
     /// retrieve.
-    String bucket,
+    required String bucket,
 
     /// The marker that is used to continue a metrics configuration listing that
     /// has been truncated. Use the NextContinuationToken from a previously

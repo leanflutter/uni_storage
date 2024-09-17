@@ -2,7 +2,7 @@
 abstract mixin class DeleteBucketLifecycleOperation {
   Future<void> deleteBucketLifecycle({
     /// The bucket name of the lifecycle to delete.
-    String bucket,
+    required String bucket,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

@@ -18,7 +18,7 @@ class CreateSessionOutput {
 abstract mixin class CreateSessionOperation {
   Future<CreateSessionOutput> createSession({
     /// The name of the bucket that you create a session for.
-    String bucket,
+    required String bucket,
 
     /// Specifies the mode of the session that will be created, either ReadWrite
     /// or ReadOnly. By default, a ReadWrite session is created. A ReadWrite

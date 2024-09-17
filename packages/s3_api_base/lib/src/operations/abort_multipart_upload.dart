@@ -8,13 +8,13 @@
 abstract mixin class AbortMultipartUploadOperation {
   Future<void> abortMultipartUpload({
     /// The bucket name to which the upload was taking place.
-    String bucket,
+    required String bucket,
 
     /// Key of the object for which the multipart upload was initiated.
-    String key,
+    required String key,
 
     /// Upload ID that identifies the multipart upload.
-    String uploadId,
+    required String uploadId,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

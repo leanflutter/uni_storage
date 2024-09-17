@@ -3,7 +3,7 @@ abstract mixin class PutPublicAccessBlockOperation {
   Future<void> putPublicAccessBlock({
     /// The name of the Amazon S3 bucket whose PublicAccessBlock configuration
     /// you want to set.
-    String bucket,
+    required String bucket,
 
     /// The MD5 hash of the PutPublicAccessBlock request body.
     String? contentMD5,

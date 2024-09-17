@@ -92,7 +92,7 @@ abstract mixin class ListObjectsV2Operation {
     /// DOC-EXAMPLE-BUCKET--usw2-az1--x-s3). For information about bucket naming
     /// restrictions, see Directory bucket naming rules in the Amazon S3 User
     /// Guide.
-    String bucket,
+    required String bucket,
 
     ///  ContinuationToken indicates to Amazon S3 that the list is being
     /// continued on this bucket with a token. ContinuationToken is obfuscated

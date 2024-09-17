@@ -3,7 +3,7 @@ abstract mixin class PutBucketOwnershipControlsOperation {
   Future<void> putBucketOwnershipControls({
     /// The name of the Amazon S3 bucket whose OwnershipControls you want to
     /// set.
-    String bucket,
+    required String bucket,
 
     /// The MD5 hash of the OwnershipControls request body.
     String? contentMD5,

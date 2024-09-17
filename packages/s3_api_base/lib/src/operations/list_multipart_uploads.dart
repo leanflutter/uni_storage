@@ -79,7 +79,7 @@ class ListMultipartUploadsResult {
 abstract mixin class ListMultipartUploadsOperation {
   Future<ListMultipartUploadsResult> listMultipartUploads({
     /// The name of the bucket to which the multipart upload was initiated.
-    String bucket,
+    required String bucket,
 
     /// Character you use to group keys.
     String? delimiter,

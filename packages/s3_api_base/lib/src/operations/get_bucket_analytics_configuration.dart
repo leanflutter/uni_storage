@@ -5,10 +5,10 @@ abstract mixin class GetBucketAnalyticsConfigurationOperation {
   Future<AnalyticsConfiguration> getBucketAnalyticsConfiguration({
     /// The name of the bucket from which an analytics configuration is
     /// retrieved.
-    String bucket,
+    required String bucket,
 
     /// The ID that identifies the analytics configuration.
-    String id,
+    required String id,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

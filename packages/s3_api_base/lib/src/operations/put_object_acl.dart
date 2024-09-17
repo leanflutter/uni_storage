@@ -3,7 +3,7 @@ abstract mixin class PutObjectAclOperation {
   Future<void> putObjectAcl({
     /// The bucket name that contains the object to which you want to attach the
     /// ACL.
-    String bucket,
+    required String bucket,
 
     /// The base64-encoded 128-bit MD5 digest of the data. This header must be
     /// used as a message integrity check to verify that the request body was
@@ -11,7 +11,7 @@ abstract mixin class PutObjectAclOperation {
     String? contentMD5,
 
     /// Key for which the PUT action was initiated.
-    String key,
+    required String key,
 
     /// Version ID used to reference a specific version of the object.
     String? versionId,

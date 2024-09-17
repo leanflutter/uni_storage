@@ -174,10 +174,10 @@ abstract mixin class WriteGetObjectResponseOperation {
     String? fwdStatus,
 
     /// Route prefix to the HTTP URL generated.
-    String requestRoute,
+    required String requestRoute,
 
     /// A single use encrypted token that maps WriteGetObjectResponse to the end
     /// user GetObject request.
-    String requestToken,
+    required String requestToken,
   });
 }

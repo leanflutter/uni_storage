@@ -3,10 +3,10 @@ abstract mixin class GetObjectTorrentOperation {
   Future<void> getObjectTorrent({
     /// The name of the bucket containing the object for which to get the
     /// torrent files.
-    String bucket,
+    required String bucket,
 
     /// The object key for which to get the information.
-    String key,
+    required String key,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

@@ -4,7 +4,7 @@ import 'package:s3_api_base/src/types/copy_object_result.dart';
 abstract mixin class CopyObjectOperation {
   Future<CopyObjectResult> copyObject({
     /// The name of the destination bucket.
-    String bucket,
+    required String bucket,
 
     /// Specifies the caching behavior along the request/reply chain.
     String? cacheControl,
@@ -29,7 +29,7 @@ abstract mixin class CopyObjectOperation {
     String? expires,
 
     /// The key of the destination object.
-    String key,
+    required String key,
 
     /// The canned access control list (ACL) to apply to the object.
     String? acl,
@@ -43,7 +43,7 @@ abstract mixin class CopyObjectOperation {
     /// can be up to 5 GB. If the source object is an object that was uploaded
     /// by using a multipart upload, the object copy will be a single part
     /// object after the source object is copied to the destination bucket.
-    String copySource,
+    required String copySource,
 
     /// Copies the object if its entity tag (ETag) matches the specified tag.
     String? copySourceIfMatch,

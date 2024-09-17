@@ -2,7 +2,7 @@
 abstract mixin class PutBucketTaggingOperation {
   Future<void> putBucketTagging({
     /// The bucket name.
-    String bucket,
+    required String bucket,
 
     /// The base64-encoded 128-bit MD5 digest of the data. You must use this
     /// header as a message integrity check to verify that the request body was

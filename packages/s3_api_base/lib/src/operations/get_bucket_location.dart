@@ -14,7 +14,7 @@ class LocationConstraint {
 abstract mixin class GetBucketLocationOperation {
   Future<LocationConstraint> getBucketLocation({
     /// The name of the bucket for which to get the location.
-    String bucket,
+    required String bucket,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

@@ -3,13 +3,13 @@ abstract mixin class PutObjectLegalHoldOperation {
   Future<void> putObjectLegalHold({
     /// The bucket name containing the object that you want to place a legal
     /// hold on.
-    String bucket,
+    required String bucket,
 
     /// The MD5 hash for the request body.
     String? contentMD5,
 
     /// The key name for the object that you want to place a legal hold on.
-    String key,
+    required String key,
 
     /// The version ID of the object that you want to place a legal hold on.
     String? versionId,

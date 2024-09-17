@@ -4,7 +4,7 @@
 abstract mixin class HeadObjectOperation {
   Future<void> headObject({
     /// The name of the bucket that contains the object.
-    String bucket,
+    required String bucket,
 
     /// Return the object only if its entity tag (ETag) is the same as the one
     /// specified; otherwise, return a 412 (precondition failed) error.
@@ -23,7 +23,7 @@ abstract mixin class HeadObjectOperation {
     String? ifUnmodifiedSince,
 
     /// The object key.
-    String key,
+    required String key,
 
     /// Part number of the object being read. This is a positive integer between
     /// 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part

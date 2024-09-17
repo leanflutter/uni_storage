@@ -5,10 +5,10 @@ abstract mixin class GetObjectAclOperation {
   Future<AccessControlPolicy> getObjectAcl({
     /// The bucket name that contains the object for which to get the ACL
     /// information.
-    String bucket,
+    required String bucket,
 
     /// The key of the object for which to get the ACL information.
-    String key,
+    required String key,
 
     /// Version ID used to reference a specific version of the object.
     String? versionId,

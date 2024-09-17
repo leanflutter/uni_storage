@@ -5,10 +5,10 @@ abstract mixin class GetObjectTaggingOperation {
   Future<Tagging> getObjectTagging({
     /// The bucket name containing the object for which to get the tagging
     /// information.
-    String bucket,
+    required String bucket,
 
     /// Object key for which to get the tagging information.
-    String key,
+    required String key,
 
     /// The versionId of the object for which to get the tagging information.
     String? versionId,

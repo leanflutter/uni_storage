@@ -2,7 +2,7 @@
 abstract mixin class PutBucketLoggingOperation {
   Future<void> putBucketLogging({
     /// The name of the bucket for which to set the logging parameters.
-    String bucket,
+    required String bucket,
 
     /// The MD5 hash of the PutBucketLogging request body.
     String? contentMD5,

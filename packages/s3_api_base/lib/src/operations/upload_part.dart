@@ -2,7 +2,7 @@
 abstract mixin class UploadPartOperation {
   Future<void> uploadPart({
     /// The name of the bucket to which the multipart upload was initiated.
-    String bucket,
+    required String bucket,
 
     /// Size of the body in bytes. This parameter is useful when the size of the
     /// body cannot be determined automatically.
@@ -14,14 +14,14 @@ abstract mixin class UploadPartOperation {
     String? contentMD5,
 
     /// Object key for which the multipart upload was initiated.
-    String key,
+    required String key,
 
     /// Part number of part being uploaded. This is a positive integer between 1
     /// and 10,000.
-    String partNumber,
+    required String partNumber,
 
     /// Upload ID identifying the multipart upload whose part is being uploaded.
-    String uploadId,
+    required String uploadId,
 
     /// This header can be used as a data integrity check to verify that the
     /// data received is the same data that was originally sent. This header

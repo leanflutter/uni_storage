@@ -5,7 +5,7 @@ abstract mixin class GetBucketRequestPaymentOperation {
   Future<RequestPaymentConfiguration> getBucketRequestPayment({
     /// The name of the bucket for which to get the payment request
     /// configuration
-    String bucket,
+    required String bucket,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

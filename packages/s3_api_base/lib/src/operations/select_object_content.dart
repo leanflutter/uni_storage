@@ -34,10 +34,10 @@ class Payload {
 abstract mixin class SelectObjectContentOperation {
   Future<Payload> selectObjectContent({
     /// The S3 bucket.
-    String bucket,
+    required String bucket,
 
     /// The object key.
-    String key,
+    required String key,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

@@ -2,10 +2,10 @@
 abstract mixin class RestoreObjectOperation {
   Future<void> restoreObject({
     /// The bucket name containing the object to restore.
-    String bucket,
+    required String bucket,
 
     /// Object key for which the action was initiated.
-    String key,
+    required String key,
 
     /// VersionId used to reference a specific version of the object.
     String? versionId,

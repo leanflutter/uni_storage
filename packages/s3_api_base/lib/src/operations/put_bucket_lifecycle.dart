@@ -2,7 +2,7 @@
 abstract mixin class PutBucketLifecycleOperation {
   Future<void> putBucketLifecycle({
     ///
-    String bucket,
+    required String bucket,
 
     ///
     String? contentMD5,

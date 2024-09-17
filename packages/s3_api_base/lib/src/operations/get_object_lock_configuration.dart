@@ -4,7 +4,7 @@ import 'package:s3_api_base/src/types/object_lock_configuration.dart';
 abstract mixin class GetObjectLockConfigurationOperation {
   Future<ObjectLockConfiguration> getObjectLockConfiguration({
     /// The bucket whose Object Lock configuration you want to retrieve.
-    String bucket,
+    required String bucket,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

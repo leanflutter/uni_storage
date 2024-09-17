@@ -228,7 +228,8 @@ extension on S3Operation {
           buffer.writeln();
         }
         buffer.writeln(_toDartDocComment(param.description, indent: 4));
-        buffer.writeln('    $type$nullable $name,');
+        final requiredStr = param.required ? 'required ' : '';
+        buffer.writeln('    $requiredStr$type$nullable $name,');
       }
       buffer.writeln('  });');
     } else {

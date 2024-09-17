@@ -35,10 +35,10 @@ class GetObjectAttributesOutput {
 abstract mixin class GetObjectAttributesOperation {
   Future<GetObjectAttributesOutput> getObjectAttributes({
     /// The name of the bucket that contains the object.
-    String bucket,
+    required String bucket,
 
     /// The object key.
-    String key,
+    required String key,
 
     /// The version ID used to reference a specific version of the object.
     String? versionId,
@@ -53,7 +53,7 @@ abstract mixin class GetObjectAttributesOperation {
 
     /// Specifies the fields at the root level that you want returned in the
     /// response. Fields that you do not specify are not returned.
-    String objectAttributes,
+    required String objectAttributes,
 
     /// Specifies the part after which listing should begin. Only parts with
     /// higher part numbers will be listed.

@@ -2,13 +2,13 @@
 abstract mixin class PutObjectTaggingOperation {
   Future<void> putObjectTagging({
     /// The bucket name containing the object.
-    String bucket,
+    required String bucket,
 
     /// The MD5 hash for the request body.
     String? contentMD5,
 
     /// Name of the object key.
-    String key,
+    required String key,
 
     /// The versionId of the object that the tag-set will be added to.
     String? versionId,

@@ -2,7 +2,7 @@
 abstract mixin class PutBucketNotificationOperation {
   Future<void> putBucketNotification({
     /// The name of the bucket.
-    String bucket,
+    required String bucket,
 
     /// The MD5 hash of the PutPublicAccessBlock request body.
     String? contentMD5,

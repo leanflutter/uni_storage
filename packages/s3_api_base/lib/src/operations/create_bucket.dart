@@ -3,7 +3,7 @@
 abstract mixin class CreateBucketOperation {
   Future<void> createBucket({
     /// The name of the bucket to create.
-    String bucket,
+    required String bucket,
 
     /// The canned ACL to apply to the bucket.
     String? acl,

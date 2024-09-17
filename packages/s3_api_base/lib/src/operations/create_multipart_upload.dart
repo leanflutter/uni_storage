@@ -28,7 +28,7 @@ abstract mixin class CreateMultipartUploadOperation {
   Future<InitiateMultipartUploadResult> createMultipartUpload({
     /// The name of the bucket where the multipart upload is initiated and where
     /// the object is uploaded.
-    String bucket,
+    required String bucket,
 
     /// Specifies caching behavior along the request/reply chain.
     String? cacheControl,
@@ -51,7 +51,7 @@ abstract mixin class CreateMultipartUploadOperation {
     String? expires,
 
     /// Object key for which the multipart upload is to be initiated.
-    String key,
+    required String key,
 
     /// The canned ACL to apply to the object. Amazon S3 supports a set of
     /// predefined ACLs, known as canned ACLs. Each canned ACL has a predefined

@@ -34,7 +34,7 @@ abstract mixin class ListBucketIntelligentTieringConfigurationsOperation {
   Future<ListBucketIntelligentTieringConfigurationsOutput> listBucketIntelligentTieringConfigurations({
     /// The name of the Amazon S3 bucket whose configuration you want to modify
     /// or retrieve.
-    String bucket,
+    required String bucket,
 
     /// The ContinuationToken that represents a placeholder from where this
     /// request should begin.

@@ -7,22 +7,22 @@ import 'package:s3_api_base/src/types/copy_part_result.dart';
 abstract mixin class UploadPartCopyOperation {
   Future<CopyPartResult> uploadPartCopy({
     /// The bucket name.
-    String bucket,
+    required String bucket,
 
     /// Object key for which the multipart upload was initiated.
-    String key,
+    required String key,
 
     /// Part number of part being copied. This is a positive integer between 1
     /// and 10,000.
-    String partNumber,
+    required String partNumber,
 
     /// Upload ID identifying the multipart upload whose part is being copied.
-    String uploadId,
+    required String uploadId,
 
     /// Specifies the source object for the copy operation. You specify the
     /// value in one of two formats, depending on whether you want to access the
     /// source object through an access point:
-    String copySource,
+    required String copySource,
 
     /// Copies the object if its entity tag (ETag) matches the specified tag.
     String? copySourceIfMatch,

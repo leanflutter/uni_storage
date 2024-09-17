@@ -3,7 +3,7 @@ abstract mixin class PutObjectLockConfigurationOperation {
   Future<void> putObjectLockConfiguration({
     /// The bucket whose Object Lock configuration you want to create or
     /// replace.
-    String bucket,
+    required String bucket,
 
     /// The MD5 hash for the request body.
     String? contentMD5,

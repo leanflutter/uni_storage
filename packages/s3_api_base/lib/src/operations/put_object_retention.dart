@@ -3,14 +3,14 @@ abstract mixin class PutObjectRetentionOperation {
   Future<void> putObjectRetention({
     /// The bucket name that contains the object you want to apply this Object
     /// Retention configuration to.
-    String bucket,
+    required String bucket,
 
     /// The MD5 hash for the request body.
     String? contentMD5,
 
     /// The key name for the object that you want to apply this Object Retention
     /// configuration to.
-    String key,
+    required String key,
 
     /// The version ID for the object that you want to apply this Object
     /// Retention configuration to.

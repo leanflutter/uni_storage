@@ -72,7 +72,7 @@ class CompleteMultipartUploadResult {
 abstract mixin class CompleteMultipartUploadOperation {
   Future<CompleteMultipartUploadResult> completeMultipartUpload({
     /// Name of the bucket to which the multipart upload was initiated.
-    String bucket,
+    required String bucket,
 
     /// Uploads the object only if the object key name does not already exist in
     /// the bucket specified. Otherwise, Amazon S3 returns a 412 Precondition
@@ -80,10 +80,10 @@ abstract mixin class CompleteMultipartUploadOperation {
     String? ifNoneMatch,
 
     /// Object key for which the multipart upload was initiated.
-    String key,
+    required String key,
 
     /// ID for the initiated multipart upload.
-    String uploadId,
+    required String uploadId,
 
     /// This header can be used as a data integrity check to verify that the
     /// data received is the same data that was originally sent. This header

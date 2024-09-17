@@ -34,7 +34,7 @@ abstract mixin class ListBucketAnalyticsConfigurationsOperation {
   Future<ListBucketAnalyticsConfigurationResult> listBucketAnalyticsConfigurations({
     /// The name of the bucket from which analytics configurations are
     /// retrieved.
-    String bucket,
+    required String bucket,
 
     /// The ContinuationToken that represents a placeholder from where this
     /// request should begin.

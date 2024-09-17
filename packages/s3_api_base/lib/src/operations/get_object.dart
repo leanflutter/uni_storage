@@ -2,7 +2,7 @@
 abstract mixin class GetObjectOperation {
   Future<void> getObject({
     /// The bucket name containing the object.
-    String bucket,
+    required String bucket,
 
     /// Return the object only if its entity tag (ETag) is the same as the one
     /// specified in this header; otherwise, return a 412 Precondition Failed
@@ -23,7 +23,7 @@ abstract mixin class GetObjectOperation {
     String? ifUnmodifiedSince,
 
     /// Key of the object to get.
-    String key,
+    required String key,
 
     /// Part number of the object being read. This is a positive integer between
     /// 1 and 10,000. Effectively performs a 'ranged' GET request for the part

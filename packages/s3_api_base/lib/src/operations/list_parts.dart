@@ -72,10 +72,10 @@ class ListPartsResult {
 abstract mixin class ListPartsOperation {
   Future<ListPartsResult> listParts({
     /// The name of the bucket to which the parts are being uploaded.
-    String bucket,
+    required String bucket,
 
     /// Object key for which the multipart upload was initiated.
-    String key,
+    required String key,
 
     /// Sets the maximum number of parts to return.
     String? maxParts,
@@ -85,7 +85,7 @@ abstract mixin class ListPartsOperation {
     String? partNumberMarker,
 
     /// Upload ID identifying the multipart upload whose parts are being listed.
-    String uploadId,
+    required String uploadId,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

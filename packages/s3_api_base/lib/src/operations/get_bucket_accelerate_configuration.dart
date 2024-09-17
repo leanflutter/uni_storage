@@ -5,7 +5,7 @@ abstract mixin class GetBucketAccelerateConfigurationOperation {
   Future<AccelerateConfiguration> getBucketAccelerateConfiguration({
     /// The name of the bucket for which the accelerate configuration is
     /// retrieved.
-    String bucket,
+    required String bucket,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

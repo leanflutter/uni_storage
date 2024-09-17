@@ -2,7 +2,7 @@
 abstract mixin class PutBucketAclOperation {
   Future<void> putBucketAcl({
     /// The bucket to which to apply the ACL.
-    String bucket,
+    required String bucket,
 
     /// The base64-encoded 128-bit MD5 digest of the data. This header must be
     /// used as a message integrity check to verify that the request body was

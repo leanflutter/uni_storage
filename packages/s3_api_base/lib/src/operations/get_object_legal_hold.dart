@@ -13,11 +13,11 @@ abstract mixin class GetObjectLegalHoldOperation {
   Future<LegalHold> getObjectLegalHold({
     /// The bucket name containing the object whose legal hold status you want
     /// to retrieve.
-    String bucket,
+    required String bucket,
 
     /// The key name for the object whose legal hold status you want to
     /// retrieve.
-    String key,
+    required String key,
 
     /// The version ID of the object whose legal hold status you want to
     /// retrieve.

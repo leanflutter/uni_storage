@@ -67,7 +67,7 @@ class ListBucketResult {
 abstract mixin class ListObjectsOperation {
   Future<ListBucketResult> listObjects({
     /// The name of the bucket containing the objects.
-    String bucket,
+    required String bucket,
 
     /// A delimiter is a character that you use to group keys.
     String? delimiter,

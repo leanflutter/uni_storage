@@ -3,10 +3,10 @@
 abstract mixin class DeleteObjectOperation {
   Future<void> deleteObject({
     /// The bucket name of the bucket containing the object.
-    String bucket,
+    required String bucket,
 
     /// Key name of the object to delete.
-    String key,
+    required String key,
 
     /// Version ID used to reference a specific version of the object.
     String? versionId,

@@ -2,7 +2,7 @@
 abstract mixin class GetBucketPolicyOperation {
   Future<void> getBucketPolicy({
     /// The bucket name to get the bucket policy for.
-    String bucket,
+    required String bucket,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

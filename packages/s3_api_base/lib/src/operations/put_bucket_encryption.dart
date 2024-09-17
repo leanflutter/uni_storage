@@ -9,7 +9,7 @@ abstract mixin class PutBucketEncryptionOperation {
     /// (SSE-KMS) or a customer-provided key (SSE-C). For information about the
     /// bucket default encryption feature, see Amazon S3 Bucket Default
     /// Encryption in the Amazon S3 User Guide.
-    String bucket,
+    required String bucket,
 
     /// The base64-encoded 128-bit MD5 digest of the server-side encryption
     /// configuration.

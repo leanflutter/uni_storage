@@ -33,7 +33,7 @@ abstract mixin class ListBucketInventoryConfigurationsOperation {
   Future<ListInventoryConfigurationsResult> listBucketInventoryConfigurations({
     /// The name of the bucket containing the inventory configurations to
     /// retrieve.
-    String bucket,
+    required String bucket,
 
     /// The marker used to continue an inventory configuration listing that has
     /// been truncated. Use the NextContinuationToken from a previously

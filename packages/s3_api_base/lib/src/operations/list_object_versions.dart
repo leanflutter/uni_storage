@@ -81,7 +81,7 @@ class ListVersionsResult {
 abstract mixin class ListObjectVersionsOperation {
   Future<ListVersionsResult> listObjectVersions({
     /// The bucket name that contains the objects.
-    String bucket,
+    required String bucket,
 
     /// A delimiter is a character that you specify to group keys. All keys that
     /// contain the same string between the prefix and the first occurrence of

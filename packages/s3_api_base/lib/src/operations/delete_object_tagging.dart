@@ -2,11 +2,11 @@
 abstract mixin class DeleteObjectTaggingOperation {
   Future<void> deleteObjectTagging({
     /// The bucket name containing the objects from which to remove the tags.
-    String bucket,
+    required String bucket,
 
     /// The key that identifies the object in the bucket from which to remove
     /// all tags.
-    String key,
+    required String key,
 
     /// The versionId of the object that the tag-set will be removed from.
     String? versionId,

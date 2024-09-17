@@ -5,7 +5,7 @@ abstract mixin class GetBucketEncryptionOperation {
   Future<ServerSideEncryptionConfiguration> getBucketEncryption({
     /// The name of the bucket from which the server-side encryption
     /// configuration is retrieved.
-    String bucket,
+    required String bucket,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

@@ -2,7 +2,7 @@
 abstract mixin class PutObjectOperation {
   Future<void> putObject({
     /// The bucket name to which the PUT action was initiated.
-    String bucket,
+    required String bucket,
 
     /// Can be used to specify caching behavior along the request/reply chain.
     /// For more information, see
@@ -50,7 +50,7 @@ abstract mixin class PutObjectOperation {
     String? ifNoneMatch,
 
     /// Object key for which the PUT action was initiated.
-    String key,
+    required String key,
 
     /// The canned ACL to apply to the object. For more information, see Canned
     /// ACL in the Amazon S3 User Guide.

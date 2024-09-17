@@ -2,7 +2,7 @@
 abstract mixin class PutBucketPolicyOperation {
   Future<void> putBucketPolicy({
     /// The name of the bucket.
-    String bucket,
+    required String bucket,
 
     /// The MD5 hash of the request body.
     String? contentMD5,

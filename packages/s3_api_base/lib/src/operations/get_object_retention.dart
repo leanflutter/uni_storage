@@ -17,11 +17,11 @@ abstract mixin class GetObjectRetentionOperation {
   Future<Retention> getObjectRetention({
     /// The bucket name containing the object whose retention settings you want
     /// to retrieve.
-    String bucket,
+    required String bucket,
 
     /// The key name for the object whose retention settings you want to
     /// retrieve.
-    String key,
+    required String key,
 
     /// The version ID for the object whose retention settings you want to
     /// retrieve.

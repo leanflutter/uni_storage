@@ -4,7 +4,7 @@
 abstract mixin class DeleteBucketOperation {
   Future<void> deleteBucket({
     /// Specifies the bucket being deleted.
-    String bucket,
+    required String bucket,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails

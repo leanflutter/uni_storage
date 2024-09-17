@@ -24,7 +24,7 @@ class DeleteResult {
 abstract mixin class DeleteObjectsOperation {
   Future<DeleteResult> deleteObjects({
     /// The bucket name containing the objects to delete.
-    String bucket,
+    required String bucket,
 
     /// Specifies whether you want to delete this object even if it has a
     /// Governance-type Object Lock in place. To use this header, you must have

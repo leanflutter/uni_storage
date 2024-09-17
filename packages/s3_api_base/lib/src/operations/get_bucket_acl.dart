@@ -4,7 +4,7 @@ import 'package:s3_api_base/src/types/access_control_policy.dart';
 abstract mixin class GetBucketAclOperation {
   Future<AccessControlPolicy> getBucketAcl({
     /// Specifies the S3 bucket whose ACL is being requested.
-    String bucket,
+    required String bucket,
 
     /// The account ID of the expected bucket owner. If the account ID that you
     /// provide does not match the actual owner of the bucket, the request fails
