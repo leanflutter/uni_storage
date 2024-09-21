@@ -1,0 +1,21 @@
+name: simple_persist_example
+description: ""
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  simple_persist:
+    path: ../../packages/simple_persist
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mostly_reasonable_lints: ^0.1.2
+
+flutter:
+  uses-material-design: true
