@@ -1,0 +1,13 @@
+name: simple_persist
+description: "Persist your data in a simple way. works on all platforms."
+version: 0.0.1
+homepage: https://github.com/leanflutter/uni_storage/packages/simple_persist
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  web: ^1.0.0
+
+dev_dependencies:
+  mostly_reasonable_lints: ^0.1.2
