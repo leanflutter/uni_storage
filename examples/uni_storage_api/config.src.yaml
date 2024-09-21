@@ -1,0 +1,15 @@
+env: production
+authEnabled: true
+authKey:
+drivers:
+  - id: s3-1
+    type: s3
+    options:
+      endPoint:
+      accessKey:
+      secretKey:
+  - id: oss-1
+    type: oss
+    options:
+      accessKey:
+      secretKey:
