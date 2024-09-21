@@ -6,6 +6,17 @@ class UniStorageClient extends UniStorageApiInterface {
   final UniStorageDriver driver;
 
   @override
+  Future<ListAllMyBucketsResult> listBuckets({
+    String? continuationToken,
+    String? maxBuckets,
+  }) {
+    return driver.listBuckets(
+      continuationToken: continuationToken,
+      maxBuckets: maxBuckets,
+    );
+  }
+
+  @override
   Future<ListBucketResult> listObjects({
     required String bucket,
     String? delimiter,

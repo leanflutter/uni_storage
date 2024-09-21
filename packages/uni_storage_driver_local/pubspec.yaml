@@ -1,0 +1,14 @@
+name: uni_storage_driver_local
+description: ""
+version: 0.0.1
+homepage: https://github.com/leanflutter/uni_storage
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  s3_api_base: ^0.0.1
+  uni_storage_base: ^0.0.1
+
+dev_dependencies:
+  mostly_reasonable_lints: ^0.1.2
