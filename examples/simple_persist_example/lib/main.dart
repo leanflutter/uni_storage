@@ -2,6 +2,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_persist/simple_persist.dart';
 
+class IntSerializer implements Serializer<int> {
+  @override
+  int? decode(String? source) {
+    return source == null ? null : int.parse(source);
+  }
+
+  @override
+  String? encode(int? value) {
+    return value?.toString();
+  }
+}
+
 void main() {
   runApp(const MyApp());
 }
@@ -57,14 +69,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late Persistor persistor;
+  late Persistor<int> persistor;
   int _counter = 0;
 
   @override
   void initState() {
-    persistor = Persistor(
+    persistor = Persistor<int>(
+      key: '_counter',
       storage: kIsWeb ? LocalStorage() : FileStorage('data.json'),
+      serializer: IntSerializer(),
     );
+    _counter = persistor.restore() ?? 0;
     super.initState();
   }
 
@@ -77,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
-    persistor.storage.setItem('_counter', _counter.toString());
+    persistor.persist(_counter);
   }
 
   @override
