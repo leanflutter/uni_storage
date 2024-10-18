@@ -12,8 +12,6 @@ dependencies:
   shelf_router: ^1.1.4
   uni_storage_client:
     path: ../../packages/uni_storage_client
-  uni_storage_driver_local:
-    path: ../../packages/uni_storage_driver_local
   uni_storage_driver_minio:
     path: ../../packages/uni_storage_driver_minio
   yaml: ^3.1.0

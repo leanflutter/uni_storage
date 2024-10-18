@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:collection/collection.dart';
 import 'package:uni_storage_client/uni_storage_client.dart';
 import 'package:uni_storage_api/utils/utils.dart';
-import 'package:uni_storage_driver_local/uni_storage_driver_local.dart';
 import 'package:uni_storage_driver_minio/uni_storage_driver_minio.dart';
 
 class MultipleStorageClient {
@@ -25,11 +22,6 @@ class MultipleStorageClient {
       }
       UniStorageDriver? driver;
       switch (driverConfig.type) {
-        case 'local':
-          driver = UniStorageDriverLocal(
-            Directory(driverConfig.options['rootDir']),
-          );
-          break;
         case 's3':
           driver = UniStorageDriverMinio(
             endPoint: driverConfig.options['endPoint'],
